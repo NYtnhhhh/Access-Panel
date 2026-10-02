@@ -1,0 +1,16 @@
+[package]
+name = "access_panel"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = "0.33"
+egui = "0.33"
+egui_extras = "0.33"
+mysql = "26"
+r2d2 = "0.8"
+r2d2_mysql = "26"
+image = "0.25"
+mc-rcon = "0.1.1"
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"

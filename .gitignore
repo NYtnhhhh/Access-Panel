@@ -1,0 +1,28 @@
+# ---------- RUST ----------
+/target/
+**/*.rs.bk
+*.pdb
+
+# ---------- ДАННЫЕ ПРИЛОЖЕНИЯ (пароли!) ----------
+servers.toml
+buttons.toml
+punish.toml
+lang.txt
+theme.txt
+accounts.toml
+
+# ---------- IDE ----------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- ЛОГИ / ВРЕМЕННОЕ ----------
+*.log
+*.tmp
+*.bak

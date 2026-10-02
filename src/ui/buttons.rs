@@ -15,7 +15,9 @@ pub fn gradient_button(
     id: egui::Id,
     theme: &Theme,
 ) -> egui::Response {
-    let (rect, response) = ui.allocate_exact_size(size, egui::Sense::click());
+    let (rect, _) = ui.allocate_exact_size(size, egui::Sense::hover());
+    let response = ui.interact(rect, id, egui::Sense::click());
+
     let hovered = response.hovered();
     let lvl = ui.ctx().animate_bool_with_time(id, hovered, 0.35);
     let painter = ui.painter();
@@ -65,7 +67,9 @@ pub fn smooth_button(
     hover_fill: egui::Color32,
     text_color: egui::Color32,
 ) -> egui::Response {
-    let (rect, response) = ui.allocate_exact_size(size, egui::Sense::click());
+    let (rect, _) = ui.allocate_exact_size(size, egui::Sense::hover());
+    let response = ui.interact(rect, id, egui::Sense::click());
+
     let lvl = ui.ctx().animate_bool_with_time(id, response.hovered(), 0.3);
     let painter = ui.painter();
     let radius = 10.0;
@@ -98,7 +102,9 @@ pub fn danger_button(
     id: egui::Id,
     theme: &Theme,
 ) -> egui::Response {
-    let (rect, response) = ui.allocate_exact_size(size, egui::Sense::click());
+    let (rect, _) = ui.allocate_exact_size(size, egui::Sense::hover());
+    let response = ui.interact(rect, id, egui::Sense::click());
+
     let lvl = ui.ctx().animate_bool_with_time(id, response.hovered(), 0.3);
     let painter = ui.painter();
     let radius = 10.0;

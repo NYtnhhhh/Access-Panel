@@ -1115,16 +1115,20 @@ impl eframe::App for AccessPanelApp {
         match &mut self.screen {
             AppScreen::Welcome(w) => {
                 let theme = self.theme.clone();
-                let lang = self.lang;
+
+                w.lang = self.lang;
 
                 if animate_to(&mut self.welcome_anim, 1.0, 0.08) {
                     ctx.request_repaint();
                 }
 
-                let result = w.show(ctx, &theme, lang, self.welcome_anim);
+                let result = w.show(ctx, &theme, self.lang, self.welcome_anim);
 
                 match result {
                     WelcomeResult::Connect(server) => {
+                        self.lang = w.lang;
+                        let _ = save_lang(self.lang);
+
                         let id = self.server_list.add(server);
                         self.server_list.set_active(&id);
                         let _ = self.server_list.save();
@@ -1132,7 +1136,7 @@ impl eframe::App for AccessPanelApp {
                         let (pool, rcon_cfg) = build_connections(&self.server_list);
                         self.pool = pool;
                         self.rcon_cfg = rcon_cfg;
-                        self.status = "Подключено".into();
+                        self.status = t("connected", self.lang).into();
                         self.screen = AppScreen::Main;
                     }
                     WelcomeResult::Pending => {}
@@ -1140,16 +1144,20 @@ impl eframe::App for AccessPanelApp {
             }
             AppScreen::AddServer(w) => {
                 let theme = self.theme.clone();
-                let lang = self.lang;
+
+                w.lang = self.lang;
 
                 if animate_to(&mut self.welcome_anim, 1.0, 0.08) {
                     ctx.request_repaint();
                 }
 
-                let result = w.show(ctx, &theme, lang, self.welcome_anim);
+                let result = w.show(ctx, &theme, self.lang, self.welcome_anim);
 
                 match result {
                     WelcomeResult::Connect(server) => {
+                        self.lang = w.lang;
+                        let _ = save_lang(self.lang);
+
                         let _ = self.server_list.add(server);
                         let _ = self.server_list.save();
                         self.screen = AppScreen::Main;

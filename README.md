@@ -11,6 +11,8 @@
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)]()
 [![Version](https://img.shields.io/badge/Version-0.1.0-success)]()
 
+**🌍 Язык:** [Русский](README.md) · [English](README.en.md)
+
 </div>
 
 ---
@@ -77,7 +79,7 @@
 
 </div>
 
-> 💡 *Скриншоты появятся после первого релиза.*
+> 💡 *Скриншоты скоро появятся.*
 
 ---
 
@@ -93,8 +95,8 @@
 
 ```bash
 # Клонируй репозиторий
-git clone https://github.com/your-username/access_panel.git
-cd access_panel
+git clone https://github.com/NYtnhhhh/Access-Panel.git
+cd Access-Panel
 
 # Собери релиз
 cargo build --release
@@ -165,11 +167,6 @@ rcon.password=твой_пароль
 
 Плейсхолдер `{player}` подставит ник из открытой карточки.
 
-Пример макроса:
-- **Название:** Heal
-- **Команда:** `heal {player}`
-- **Цвет:** зелёный
-
 ### 🎨 Смена темы и языка
 
 Открой **⚙ Настройки** (справа вверху):
@@ -178,37 +175,6 @@ rcon.password=твой_пароль
 - **Язык:** RU / EN
 
 Выбор сохраняется в `theme.txt` и `lang.txt`.
-
----
-
-## 📁 Структура проекта
-
-```
-access_panel/
-├── src/
-│   ├── main.rs            # Точка входа, UI
-│   ├── database.rs        # MySQL-запросы
-│   ├── models.rs          # Структуры данных
-│   ├── rcon.rs            # RCON-клиент
-│   ├── servers.rs         # Список серверов
-│   ├── macros.rs          # Кнопки-макросы
-│   ├── punish.rs          # Шаблоны наказаний
-│   ├── i18n.rs            # Переводы RU/EN
-│   ├── theme.rs           # Темы оформления
-│   ├── utils.rs           # Утилиты
-│   └── ui/
-│       ├── mod.rs
-│       ├── buttons.rs     # Кастомные кнопки
-│       ├── fonts.rs       # Шрифты
-│       ├── welcome.rs     # Экран входа
-│       ├── settings_panel.rs
-│       ├── macro_editor.rs
-│       └── punish_editor.rs
-├── Cargo.toml
-├── .gitignore
-├── servers.toml.example   # Шаблон (без паролей)
-└── README.md
-```
 
 ---
 
@@ -243,12 +209,12 @@ access_panel/
 - [x] Темы (Dark / Light)
 - [x] Мультиязычность (RU / EN)
 - [x] Кнопки-макросы
-- [x] Кастомные шаблоны наказаний
 - [x] Плавные анимации
+- [ ] Кастомные шаблоны наказаний
 - [ ] Статистика в шапке
 - [ ] Логи действий
 - [ ] Импорт / экспорт серверов
-- [ ] Paper-плагин для синхронизации
+- [ ] Paper-плагин
 - [ ] Веб-версия
 
 ---
